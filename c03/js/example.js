@@ -15,7 +15,7 @@
 var hotelName, roomRate, specialRate;
 hotelName = document.getElementById('hotelName');
 roomName = document.getElementById('roomName');
-speciallName = document.getElementById('speciallName');
+speciallName = document.getElementById('specialName');
 
 hotelName.textContent = hotel.name;
 roomRate.textContent = '$' + hotel.roomRate.toFixed(2);
