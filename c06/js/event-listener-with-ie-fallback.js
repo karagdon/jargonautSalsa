@@ -1,7 +1,7 @@
 var elUsername = document.getElementById('username');
 var elMsg = document.getElementById('feedback');
 
-function checkUsername(minLength) {
+function chewckUsername(minLength) {
 	if (elUsername.value.length < minLength ) {
 	// Set Msg
 		elMsg.innerHTML = 'username must be ' + minLength + ' characters or more';
