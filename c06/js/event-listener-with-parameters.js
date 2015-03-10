@@ -3,7 +3,7 @@ var elMsg = document.getElementById('feedback');
 
 function checkUsername(minLength){
 	if (elUsername.value.length < 5) {
-		elMsg.textContent = 'Username must be' + minLength + ' characters or more';
+		elMsg.textContent = 'Username must be ' + minLength + ' characters or more';
 	}else {
 		elMsg.textContent = '';
 	}
