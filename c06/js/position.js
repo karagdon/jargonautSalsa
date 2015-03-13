@@ -18,3 +18,4 @@ cy.value = event.clientY;
 var el = document.getElementById('body');
 // Move updates position
 el.addEventListener('mousemove', showPosition, false);
+el.addEventListener('scroll', showPosition, false);
