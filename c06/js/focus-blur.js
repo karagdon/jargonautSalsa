@@ -20,4 +20,3 @@ function checkUsername() {
  
  // When the username input gains or loses focus, call the functions above!
  el.addEventListener('focus', tipUsername, false); // focus call tipUsername()
- el.addEventListener('blur', checkUsername, false); // focus call checkUsername()
