@@ -11,4 +11,4 @@ document.body.appendChild(elNote);
 function dismissNote(){document.body.removeChild(elNote);}
 
 var elClose = document.getElementById('close');
- elClose.addEventListener('click', dismissNote, false); // focus call checkUsername()
+elClose.addEventListener('click', dismissNote, false); // focus call checkUsername()
