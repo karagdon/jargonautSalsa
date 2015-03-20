@@ -8,3 +8,12 @@ target = event.target || event.srcElement;
 textEntered = e.target.value;
 noteName.textContent = textEntered;
 
+if (document.addEventListener)
+	{
+		document.addEventListener('click', function(e){recorderControls(e);}, false);
+		username.addEventListener('input', writeLabel, false);
+	}else{
+		docuement.attachEvent('onclick', function(e){recorderControls(e);} );
+		username.attachEvent('onkeyup', writeLabel, false);
+		
+	}
