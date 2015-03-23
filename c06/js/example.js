@@ -1,45 +1,60 @@
-var username, noteName, textEntered, target;
+var noteInput, noteName, textEntered, target;
+
 noteName = document.getElementById('noteName');
+noteInput = document.getElementById('noteInput');
 
-function writeLabel(e)
-{if (!e) {e = window.event;} // ie5-8 fallback
-
-target = event.target || event.srcElement;
-textEntered = e.target.value;
-noteName.textContent = textEntered;
+function writeLabel(e) {
+  if (!e) {
+    e = window.event;
+  }
+  target = e.target || e.srcElement;
+  textEntered = e.target.value;
+  noteName.textContent = textEntered;
 }
-// if (document.addEventListener)
-// 	{
-// 		document.addEventListener('click', function(e) {
-// 			recorderControls(e);
-// 		}, false);
-// 		username.addEventListener('input', writeLabel, false);
-// 	}else{
-// 		document.attachEvent('onclick', function(e){recorderControls(e);}, false );
-// 		username.attachEvent('onkeyup', writeLabel, false);
-		
-// 	}
-function recorderControls(e)
-	{if (!e){e = window.event;}}
-	target = event.target || event.srcElement;
-	if (event.preventDefault){e.preventDefault();}
-	else{event.returnValue = false;}
-	
-switch (target.getAttribute('data-state'))
-	{
-	case 'record':
-		record(target);
-		break;
-	case 'stop':
-		stop(target);
-		break;
-	}
 
-function record(target){
-	target.setAttribute('data-state', 'stop');
-	target.textContent = 'stop';
+
+function recorderControls(e) {
+  if (!e) {
+    e = window.event;
+  }
+  target = e.target || e.srcElement;
+  if (e.preventDefault) {
+    e.preventDefault();
+  } else {
+    event.returnValue = false;
+  }
+
+  switch(target.getAttribute('data-state')) {
+    case 'record':
+      record(target);
+      break;
+    case 'stop':
+      stop(target);
+      break;
+      
+  }
 }
-function stop(target){
-	target.setAttribute('data-state', 'record');
-	target.textContent = 'record';
+
+function record(target) {
+  target.setAttribute('data-state', 'stop');
+  target.textContent = 'stop';
+}
+
+function stop(target) {
+  target.setAttribute('data-state', 'record');
+  target.textContent = 'record';
+}
+
+if (document.addEventListener) {
+  document.addEventListener('click', function(e) {
+    recorderControls(e);
+  }, false);
+  
+  noteInput.addEventListener('input', writeLabel, false);
+} else {
+  document.attachEvent('onclick', function(e) {
+    recorderControls(e);
+  });
+ 
+  noteInput.attachEvent('onkeyup', writeLabel, false);
 }
