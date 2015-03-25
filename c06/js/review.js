@@ -4,18 +4,18 @@ elList = document.getElementById('list');
 addLink = document.querySelector('a');
 counter = document.getElementById('counter');
 addClass = document.querySelector('li');
-// addLinkFirst = document.querySelector('a');
+addLinkFirst = document.querySelector('a');
 var list = document.getElementsByTagName('ul')[0];
 
-// function addFirst(e) {
-// 	e.preventDefault();
-// 	newEl = document.createElement('li');
-// 	newItem = document.getElementById('newItemInput').value;
-// 	newText = document.createTextNode(newItem);
-// 	newEl.appendChild(newText);
-// 	elList.appendChild(newEl);
-// 	list.insertBefore(elList, list.firstChild)
-// }
+function addFirst(e) {
+	e.preventDefault();
+	newEl = document.createElement('li');
+	newItem = document.getElementById('newItemInput').value;
+	newText = document.createTextNode(newItem);
+	newEl.appendChild(newText);
+	elList.appendChild(newEl);
+	list.insertBefore(elList, list.firstChild);
+}
 
 function addItem(e) {
 	e.preventDefault();
@@ -38,7 +38,8 @@ function updateClass() {
 }
 
 
-addLink.addEventListener('click', addItem, false);
-// addLinkFirst.addEventListener('click', addFirst, false);
+// addLink.addEventListener('click', addItem, false);
+addLink.addEventListener('click', updateClass, false);
+addLinkFirst.addEventListener('click', addFirst, false);
 elList.addEventListener('DOMNodeInserted', updateCount, false);
 
