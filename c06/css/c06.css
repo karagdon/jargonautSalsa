@@ -3,7 +3,7 @@
 body {
   background-color: #000;
   font-family: 'Oswald', 'Futura', sans-serif;
-  margin: 0px; 
+  margin: 0px;
   padding: 0px;}
 
 #page {
@@ -78,11 +78,11 @@ li.complete a {
 
 p {
   background-color: #7f675c;
-  color: #e3dfdd; 
+  color: #e3dfdd;
   padding: 10px;
   margin: 20px auto;
-  min-width: 20%; 
-  max-width: 80%; 
+  min-width: 20%;
+  max-width: 80%;
   border-radius: 5px;
   text-align: center;
   text-shadow: -1px 1px 0px #333;
@@ -245,11 +245,11 @@ label.checkbox {
 /* Position Example */
 #stats {
   background-color: #6cc0ac;
-  color: #ffffff; 
-  position: fixed; 
-  top: 0px; 
-  left: 0px; 
-  padding: 20px; 
+  color: #ffffff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  padding: 20px;
   width: 100%;}
 
 #stats input[type="text"] {
@@ -261,9 +261,9 @@ label.checkbox {
 #body #page {margin-top: 130px;}
 
 .divider {
-  margin: 0px 40px; 
-  border-left: 1px solid #fff; 
-  border-right: 1px solid #fff; 
+  margin: 0px 40px;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
   color: #6cc0ac;}
 
 
@@ -300,7 +300,7 @@ a[data-state='record'] {background-image: url('../images/record.png');}
   margin: 0px auto;}
 #buttons a {
   width: 100px;
-  height: 100px; 
+  height: 100px;
   text-indent: 100%;
   margin-top: 20px;
   display: inline-block;
@@ -336,7 +336,7 @@ a[data-state='record'] {background-image: url('../images/record.png');}
         margin: 20px auto 20px auto;
       }
     }
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     h1{
       background-image: url(../images/2xkinglogo.png);
       background-size: 72px 72px;

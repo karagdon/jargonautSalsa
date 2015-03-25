@@ -1,10 +1,10 @@
 var elList, addLink, addFirst, addLinkFirst, addClass, newEl, newText, counter, listitems;
 
 elList = document.getElementById('list');
-addLink = document.querySelector('a');
+addLink = document.getElementById('addLast');
 counter = document.getElementById('counter');
 addClass = document.querySelector('li');
-addLinkFirst = document.querySelector('a');
+addLinkFirst = document.getElementById('addFirst');
 
 
 function addFirst(e) {
