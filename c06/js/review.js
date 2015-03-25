@@ -5,7 +5,7 @@ addLink = document.querySelector('a');
 counter = document.getElementById('counter');
 addClass = document.querySelector('li');
 addLinkFirst = document.querySelector('a');
-var list = document.getElementsByTagName('ul')[0];
+
 
 function addFirst(e) {
 	e.preventDefault();
@@ -14,7 +14,8 @@ function addFirst(e) {
 	newText = document.createTextNode(newItem);
 	newEl.appendChild(newText);
 	elList.appendChild(newEl);
-	list.insertBefore(elList, list.firstChild);
+	var list = document.getElementsByTagName('ul')[0];
+	list.insertBefore(newEl, list.firstChild);
 }
 
 function addItem(e) {
@@ -30,16 +31,15 @@ function updateCount() {
 	counter.innerHTML = listitems;
 }
 
-function updateClass() {
- 	// change the class for msg, add the msg
- 	if (newEl.className == 'warm')
- 		{newEl.className == 'cool';}
- 		else{newEl.className = 'warm';}
-}
+// function updateClass() {
+//  	// change the class for msg, add the msg
+//  	if (newEl.className == 'warm')
+//  		{newEl.className == 'cool';}
+//  		else{newEl.className = 'warm';}
+// }
 
 
-// addLink.addEventListener('click', addItem, false);
-addLink.addEventListener('click', updateClass, false);
+addLink.addEventListener('click', addItem, false);
 addLinkFirst.addEventListener('click', addFirst, false);
 elList.addEventListener('DOMNodeInserted', updateCount, false);
-
+// status.addEventListener('click', updateClass, false);
