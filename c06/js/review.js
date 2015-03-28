@@ -13,7 +13,7 @@ function addFirst(e) {
 	newItem = document.getElementById('newItemInput').value;
 	newText = document.createTextNode(newItem);
 	newEl.appendChild(newText);
-	newEl.setAttribute('onclick', 'updateClass();');
+	newEl.setAttribute('onclick', 'updateClass()');
 	newEl.className = 'cool';
 	elList.appendChild(newEl);
 	var list = document.getElementsByTagName('ul')[0];
@@ -25,7 +25,7 @@ function addItem(e) {
 	newEl = document.createElement('li');
 	newItem = document.getElementById('newItemInput').value;
 	newText = document.createTextNode(newItem);
-	newEl.setAttribute('onclick', 'updateClass();');
+	
 	newEl.appendChild(newText);
 	newEl.className = 'hot';
 	elList.appendChild(newEl);
@@ -36,6 +36,9 @@ function updateCount() {
 	counter.innerHTML = listitems;
 }
 
+function updateListwithClass() {
+	newEl.setAttribute('onclick', 'updateClass()');
+}
 
 function updateClass() {
  	//change the class for msg, add the msg
@@ -48,31 +51,32 @@ function updateClass() {
 	else if (addClass.className == 'warm')
  		{addClass.className = 'hot';}
 
-// 	switch (this) {
-//     case (this.className = 'cool'):
-//     	this.className = 'warm';
+// 	switch () {
+//     case (className = 'cool'):
+//     	className = 'warm';
 //     	break;
     	
-//     	case (this.className = 'warm'):
-//     	this.className = 'hot';
+//     	case (className = 'warm'):
+//     	className = 'hot';
 //     	break;
     	
-//     	case (this.className = 'hot'):
-//     	this.className = 'cool';
+//     	case (className = 'hot'):
+//     	className = 'cool';
 //     	break;
     	
-//     	case (this.className = null):
-//     	this.className = 'warm';
+//     	case (className = null):
+//     	className = 'warm';
 //     	break;
 // }
 }
 
 
 
-addClass.setAttribute('onclick', 'updateClass();');
 
-addClass.addEventListener('onclick', updateClass, false);
+
+addClass.addEventListener('onclick', updateClass(), false);
 addLink.addEventListener('click', addItem, false);
 addLinkFirst.addEventListener('click', addFirst, false);
 elList.addEventListener('DOMNodeInserted', updateCount, false);
+newEl.addEventListener('DOMNodeInserted', updateListwithClass, false);
 
