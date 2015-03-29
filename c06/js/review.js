@@ -40,6 +40,12 @@ function updateListwithClass() {
 	newEl.setAttribute('onclick', 'updateClass()');
 }
 
+
+//change code to work with this instead of below
+$("todo-state").click(function(){
+	$(this).addClass("updateClass")
+}
+
 function updateClass() {
  	//change the class for msg, add the msg
  	if (addClass.className === '')
