@@ -42,39 +42,47 @@ function updateListwithClass() {
 
 
 //change code to work with this instead of below
-$("todo-state").click(function(){
-	$(this).addClass("updateClass")
-}
+$("li.task").mouseover(function () {
+    $(this).addClass("hovered-task");
+});
 
-function updateClass() {
- 	//change the class for msg, add the msg
- 	if (addClass.className === '')
- 		{addClass.className = 'hot';}
-	else if (addClass.className == 'hot')
- 		{addClass.className = 'cool';}
-	else if (addClass.className == 'cool')
- 		{addClass.className = 'warm';}
-	else if (addClass.className == 'warm')
- 		{addClass.className = 'hot';}
+$("li.task").mouseout(function () {
+    $(this).removeClass("unhovered-task");
+});
 
-// 	switch () {
-//     case (className = 'cool'):
-//     	className = 'warm';
-//     	break;
-    	
-//     	case (className = 'warm'):
-//     	className = 'hot';
-//     	break;
-    	
-//     	case (className = 'hot'):
-//     	className = 'cool';
-//     	break;
-    	
-//     	case (className = null):
-//     	className = 'warm';
-//     	break;
-// }
-}
+
+$("li.task").click(function() {
+ 	if ($(this).className === '')
+ 		{$(this).addClass('hot');}
+ 		
+	else if ($(this).className == 'hot')
+ 		{
+ 			$(this).removeClass('hot');
+ 			$(this).addClass('cold');
+ 		}
+ 		else if ($(this).className == 'cold')
+ 		{
+ 			$(this).removeClass('cold');
+ 			$(this).addClass('warm');
+ 		}
+  		else if ($(this).className == 'warm')
+ 		{
+ 			$(this).removeClass('warm');
+ 			$(this).addClass('hot');
+ 		}
+})
+
+
+// function updateClass() {
+//  	//change the class for msg, add the msg
+//  	if (addClass.className === '')
+//  		{addClass.className = 'hot';}
+// 	else if (addClass.className == 'hot')
+//  		{addClass.className = 'cool';}
+// 	else if (addClass.className == 'cool')
+//  		{addClass.className = 'warm';}
+// 	else if (addClass.className == 'warm')
+//  		{addClass.className = 'hot';}
 
 
 
