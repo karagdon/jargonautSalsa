@@ -1,2 +1,2 @@
-var $listHtml = $('ul').html();
+var $listHTML = $('ul').html();
 $('ul').append($listHTML);

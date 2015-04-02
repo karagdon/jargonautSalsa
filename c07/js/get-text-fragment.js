@@ -1,2 +1,2 @@
-var $listHtml = $('ul').texr();
-$('ul').append('<p>'+$listText + '</p>');
+var $listText = $('ul').texr();
+$('ul').append('<p>'+ $listText + '</p>');
