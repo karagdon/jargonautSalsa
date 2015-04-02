@@ -1,2 +1,2 @@
-var $listItemText = $('li').html();
+var $listItemText = $('li').text();
 $('li').append('<i>' + $listItemText + '</i>');
