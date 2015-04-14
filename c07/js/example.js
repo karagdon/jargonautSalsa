@@ -10,6 +10,10 @@
 
 $(function(){
 // shorthand for document.ready();
+	var $list, $newItemForm, $newItemButton;
+	var item = '';
+	$newItemForm = $('#newItemForm');
+	$newItemButton = $('#newItemButton');
 	
 // variables here
 
@@ -25,4 +29,4 @@ $(function(){
 	
 // update the counter
 
-};)
+});
