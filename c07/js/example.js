@@ -20,13 +20,29 @@ $(function(){
 
 // UI elements
 // List
-// Button
 
+
+$newItemButton.show();
+$newItemForm.hide();
+$('#showForm').on('click', function() {
+	$newItemButton.hide();
+	$newItemForm.show();
+});
+
+// Button
 // Add a new list item
 // Remove a new list item
-	// Fade effect
+
+// Fade effect
+$('li').hide().each(function(index){
+	$(this).delay(450 * index).fadeIn(1600);
+	});
+	
 	// Move to the bottom of the list
 	
 // update the counter
-
+function updateCount(){
+	var items = $('li[class!=complete]').length;
+}
+updateCount();
 });
