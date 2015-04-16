@@ -1,48 +1,53 @@
-// Practice Event delegation
+$(function() {
+  var $list, $newItemForm, $newItemButton;
+  var item = '';
+  $list = $('ul');
+  $newItemForm = $('#newItemForm');
+  $newItemButton = $('#newItemButton');
 
-// TODO: users can add new list items
-// TODO: Click to indicate an item is <status>
-// TODO: Once complete, another <click> will ..
-		// if 'Not complete', will 1) move to bottom 2) mark as 'complete'
-		// if 'complete', will 1) fade, 2) remove from list, 3) update counter
-// TODO: Updated count of the number of items there are in the list, shown at heading <h2></h2>
-
-
-$(function(){
-// shorthand for document.ready();
-	var $list, $newItemForm, $newItemButton;
-	var item = '';
-	$newItemForm = $('#newItemForm');
-	$newItemButton = $('#newItemButton');
-	
-// variables here
+  function updateCount() {
+    var items = $('li[class!=complete]').length;
+    $('#counter').text(items);
+  }
+  updateCount();
 
 
-// UI elements
-// List
+  // $newItemButton.show();
+  $newItemForm.show();
+  // $('#showForm').on('click', function() {
+  //   $newItemButton.hide();
+  //   $newItemForm.show();
+  // });
+
+  // ADDING A NEW LIST ITEM
+  $newItemForm.on('submit', function(e) {
+    e.preventDefault();
+    var text = $('input:text').val();
+    $list.append('<li>' + text + '</li>');
+    $('input:text').val('');
+    updateCount();
+  });
 
 
-$newItemButton.show();
-$newItemForm.hide();
-$('#showForm').on('click', function() {
-	$newItemButton.hide();
-	$newItemForm.show();
-});
+  $list.on('click', 'li', function() {
+    var $this = $(this);
+    var complete = $this.hasClass('complete');
 
-// Button
-// Add a new list item
-// Remove a new list item
+    if (complete === true) {
+      $this.animate({
+        opacity: 0.0,
+        paddingLeft: '+=180'
+      }, 500, 'swing', function() {
+        $this.remove();
+      });
+    } else {
+      item = $this.text();
+      $this.remove();
+      $list
+        .append('<li class=\"complete\">' + item + '</li>')
+        .hide().fadeIn(300);
+      updateCount();
+    }
+  });
 
-// Fade effect
-$('li').hide().each(function(index){
-	$(this).delay(450 * index).fadeIn(1600);
-	});
-	
-	// Move to the bottom of the list
-	
-// update the counter
-function updateCount(){
-	var items = $('li[class!=complete]').length;
-}
-updateCount();
 });
