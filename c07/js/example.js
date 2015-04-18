@@ -23,17 +23,8 @@ $(function() {
   });
 });
 
-// $( "li" ).click(function() {
-//   $(this).toggleClass("warm cool complete hot");
-// });
-
-
-var cls = [ "cool", "warm", "hot", "complete" ];
-var uls = $( "ul" ).children();
-$( "li" ).on( "click", function( event ) {
-  event.preventDefault();
-  this.each(function( i ) {
-    this.className = cls[ i ];
-  });
-  appendClass();
+$( "li" ).on( 'click',function() {
+    var status = ["hot","complete","cool","warm"];
+     i = (i+1)%status.length;
+     $('this').removeClass().addClass(status[i]);
 });
