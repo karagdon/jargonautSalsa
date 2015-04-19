@@ -28,3 +28,5 @@ $( "li" ).on( 'click',function() {
      i = (i+1)%status.length;
      $('this').removeClass().addClass(status[i]);
 });
+
+// TODO: fix switch class
