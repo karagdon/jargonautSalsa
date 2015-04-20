@@ -1,3 +1,7 @@
+$( document ).ready(function() {
+ updateCount();
+});
+
 $(function() {
 
   // SETUP
@@ -6,27 +10,52 @@ $(function() {
   $list = $('ul');
   $newItemForm = $('#newItemForm');
   
-  // ITEM COUNTER
-  function updateCount() {
-    var items = $('li[class!=complete]').length;
-    $('#counter').text(items);
-  }
-  updateCount();
+
 
   // ADDING A NEW LIST ITEM
   $newItemForm.on('submit', function(e) {
     e.preventDefault();
     var text = $('input:text').val();
-    $list.append('<li>' + text + '</li>').delay(450 * index).fadeIn(1600);
+    $list.append('<li class="warm">' + text + '</li>').attr('class');
     $('input:text').val('');
+    
     updateCount();
   });
 });
 
-$( "li" ).on( 'click',function() {
-    var status = ["hot","complete","cool","warm"];
-     i = (i+1)%status.length;
-     $('this').removeClass().addClass(status[i]);
+$('li').click(function () {
+  
+  //change the class
+  var classes = ['hot','warm','cool', 'complete'];
+  $(this).each(function(){
+    this.className = classes[($.inArray(this.className, classes)+1)%classes.length];
+  });
+  
+  //Update the counter
+  updateCount();
 });
 
-// TODO: fix switch class
+// TODO: counter for count of classes
+  // ITEM COUNTER
+  function updateCount() {
+    var itemsAll = $('li[class!=complete]').length;
+    $('#counter').text(itemsAll);
+    
+  // COOL ITEM COUNTER
+    var itemsHot = $('li[class=hot]').length;
+    $('#counterHot').text(itemsHot);
+
+  
+  // WARM ITEM COUNTER
+    var itemsWarm = $('li[class=warm]').length;
+    $('#counterWarm').text(itemsWarm);
+
+  
+  // HOT ITEM COUNTER
+    var itemsCool = $('li[class=cool]').length;
+    $('#counterCool').text(itemsCool);
+
+  // COMPLETE ITEM COUNTER
+    var itemsDone = $('li[class=complete]').length;
+    $('#counterComplete').text(itemsDone);
+  }
