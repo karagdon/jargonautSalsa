@@ -1,7 +1,7 @@
    updateCount();
 
   //SETUP
-    var $list, $newItemForm, $newItemButton;
+    var $list, $newItemForm;
     var item = '';
     $list = $('ul');
     $newItemForm = $('#newItemForm');
@@ -14,24 +14,10 @@
     $list.append('<li class="cool">' + text + '</li>');
     $('input:text').val('');
     updateCount();
-  
-    // TODO: change class of new list items
-    $('li').click(function () {
-      
-      // change the class
-      var classes = ['hot','warm','cool', 'complete'];
-        $(this).each(function(){
-          this.className = classes[($.inArray(this.className, classes)+1)%classes.length];
-        });
-      
-      //Update the counter
-      updateCount();
-        
-    });
 
   });
 
-  $('li').click(function () {
+ $list.on('click', 'li',function () {
     
     // change the class
     var classes = ['hot','warm','cool', 'complete'];
