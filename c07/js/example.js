@@ -14,8 +14,23 @@
     $list.append('<li class="cool">' + text + '</li>');
     $('input:text').val('');
     updateCount();
+  
+    // TODO: change class of new list items
+    $('li').click(function () {
+      
+      // change the class
+      var classes = ['hot','warm','cool', 'complete'];
+        $(this).each(function(){
+          this.className = classes[($.inArray(this.className, classes)+1)%classes.length];
+        });
+      
+      //Update the counter
+      updateCount();
+        
+    });
+
   });
-// TODO: change class of new list items
+
   $('li').click(function () {
     
     // change the class
@@ -28,7 +43,7 @@
     updateCount();
       
   });
-
+  
 
   
   // ITEM COUNTER
@@ -54,3 +69,7 @@
       var itemsDone = $('li[class=complete]').length;
       $('#counterComplete').text(itemsDone);
   }
+  
+
+//Update the counter
+updateCount();
