@@ -1,4 +1,4 @@
-   updateCount();
+    updateCount();
 
   //SETUP
     var $list, $newItemForm;
@@ -11,12 +11,29 @@
   $newItemForm.on('submit', function(e) {
     e.preventDefault();
     var text = $('input:text').val();
-    $list.append('<li class="cool">' + text + '</li>');
+    
+    var newlistItem = $('<li class="cool">' + text + '</li>');
+    $list.append(newlistItem);
     $('input:text').val('');
     updateCount();
-
+    
+    
+    // newlistItem.on('click' , function () {
+    
+    // // change the class
+    // var classes = ['hot','warm','cool', 'complete'];
+    //   // $(this).each(function(){
+    //   //
+    //   this.className = classes[($.inArray(this.className, classes)+1)%classes.length];
+    //   // });
+    
+    // //Update the counter
+    // updateCount();
+      
+    // });
+  
   });
-
+  
  $list.on('click', 'li',function () {
     
     // change the class
@@ -29,8 +46,6 @@
     updateCount();
       
   });
-  
-
   
   // ITEM COUNTER
   function updateCount() {
