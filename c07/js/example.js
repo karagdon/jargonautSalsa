@@ -1,3 +1,4 @@
+
     updateCount();
 
   //SETUP
@@ -17,35 +18,26 @@
     $('input:text').val('');
     updateCount();
     
-    
-    // newlistItem.on('click' , function () {
-    
-    // // change the class
-    // var classes = ['hot','warm','cool', 'complete'];
-    //   // $(this).each(function(){
-    //   //
-    //   this.className = classes[($.inArray(this.className, classes)+1)%classes.length];
-    //   // });
-    
-    // //Update the counter
-    // updateCount();
-      
-    // });
-  
   });
   
- $list.on('click', 'li',function () {
-    
+  
+  //if class is complete, (to the right) click on trash icon button to remove item
+
+
+$list.on('click', 'li',function () {
     // change the class
-    var classes = ['hot','warm','cool', 'complete'];
+    var classes = ['hot','warm','cool', 'complete completebtn'];
       $(this).each(function(){
         this.className = classes[($.inArray(this.className, classes)+1)%classes.length];
-      });
     
-    //Update the counter
+    var delButton = $('<button/>');
+    
+         
+//Update the counter
     updateCount();
       
   });
+});
   
   // ITEM COUNTER
   function updateCount() {
