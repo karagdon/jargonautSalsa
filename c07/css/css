@@ -27,7 +27,7 @@ h1 {
 
 h2 {
   color: #fff;
-  font-size: 15px;
+  font-size: 24px;
   font-weight: normal;
   text-align: center;
   text-transform: uppercase;
@@ -55,11 +55,10 @@ ul {
   margin: 0px;}
 
 li {
-  background-color: #000000;
+  background-color: #ec8b68;
   color: #fff;
   border-top: 1px solid #fe9772;
   border-bottom: 1px solid #9f593f;
-  min-height:30px;
 font-size: 20px;
   letter-spacing: .05em;
   list-style-type: none;
@@ -109,12 +108,7 @@ p {
 .hide {
   display:none !important;
 }
-.warm {
-  background-color: #ec8b68;
-  color: #fff;
-  text-shadow: 2px 2px 1px #914141;
-    border-top: 1px solid #e99295;
-  border-bottom: 1px solid #914141;}
+
 .complete {
   
   background-color: #999;
@@ -127,65 +121,15 @@ p {
   border-bottom: 1px solid #b0b0b0;
   text-shadow: 2px 2px 1px #333;}
 
-
-.delete:after {
-  content: "X" !important;
-  z-index:100000;
-}
 .delete {
-  font-family:arial;
-  border-radius:0;
-  padding: 4px 10px;
-  margin-top: -10px;
-  background-color: #000;
-  font-size:30px;
-  vertical-align:middle;
-  color:#f11 !important;
+  background-color: #ff0000;
   float:none !important;
+  vertical-align:middle;
+  display:block;
   position:absolute;
-  display:inline;
-  font-weight:bold;
-  right:-43px !important;
-  z-index:998;
+  right:-100px !important;
+  background-image: url("../images/icon-trash.png");
 }
-.deleteComplete, .clearAll {
-  border-radius:0;
-  width:200px;
-  height:30px;
-  font-size:20px;
-  background-color: #000;
-  color:#fff;
-  margin-top: 0px;
-  padding: 0 0;
-  display:block;
-  font-weight:bold;
-  z-index:998;
-  
-}
-.deleteComplete:after {
-  content: '"DONE"';
-}
-.clearAll:after {
-  content: 'All items';
-}
-
-.deleteComplete:before, .clearAll:before {
-content: url('../images/icon-trash-small.png');
-}
-
-
-.ClearAll {
-  border-radius:0;
-  width:30px;
-  height:30px;
-  margin-top: 0px;
-  padding: 0 0;
-  display:block;
-  font-weight:bold;
-  z-index:998;
-  background: url('../images/icon-heart2.png');
-}
-
 
 .favorite {
   background-image: url('../images/icon-heart.png');

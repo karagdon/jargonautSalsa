@@ -1,4 +1,6 @@
 
+    updateCount();
+
   //SETUP
     var $list, $newItemForm;
     var item = '';
@@ -11,39 +13,29 @@
     e.preventDefault();
     var text = $('input:text').val();
     
-    var newlistItem = $('<li class="cool">' + text + '<button class="delete"></button></li>');
+    var newlistItem = $('<li class="cool">' + text + '</li><button class="delete hide"></button>');
     $list.append(newlistItem);
     $('input:text').val('');
     updateCount();
     
   });
-
- //DONE: click on X icon button to remove item
-  $list.on('click', 'button.delete',function(e){
-    e.preventDefault();
-        $(this).parent('li').remove();
-  });
-  // TODO: click on TRASH to remove all 'complete' / marked for deletion
-  $(document).on('click', 'button.deleteComplete',function(e){
-    e.preventDefault();
-        $('li.complete').remove();
-  });
-
-  // ALL CLICK ITEMS THAT HAPPEN ON OR PERTAIN TO A LIST ITEM
-  $list.on('click', 'li' ,function () {
   
-    
+  //if class is complete, (to the right) click on trash icon button to remove item
 
-    //Update the counter
-    
-  
+
+$list.on('click', 'li',function () {
     // change the class
     var classes = ['hot','warm','cool', 'complete'];
       $(this).each(function(){
-        this.className = classes[($.inArray(this.className, classes)+1  )%classes.length];
+        this.className = classes[($.inArray(this.className, classes)+1)%classes.length];
+
+  $('li[class=complete]').find('.delete').toggleClass('hidden');
+  
+
+//Update the counter
+    updateCount();
       
   });
-  updateCount();
 });
   
   // ITEM COUNTER

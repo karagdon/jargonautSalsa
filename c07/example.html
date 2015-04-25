@@ -9,22 +9,25 @@
       <h1 id="header">List</h1>
       <h2>THINGS TO DO <span id="counter"></span></h2><br/>
       
-      <h2>RISKY<span id="counterHot"></span></h2><br/>
-      <h2>CLOSE <span id="counterWarm"></span></h2><br/>
-      <h2>DOIN' OK <span id="counterCool"></span></h2><br/>
+      <h2>RISKY <span id="counterHot" class="hot"></span></h2><br/>
+      <h2>CLOSE <span id="counterWarm" class="warm"></span></h2><br/>
+      <h2>DOIN' OK <span id="counterCool" class="cool"></span></h2><br/>
       <h2>DONE! <span id="counterComplete"></span></h2>
       <ul>
-        <li class="cool"><em>fresh</em> figs</li>
-        <li>pine nuts</li>
-        <li>honey</li>
-        <li>balsamic vinegar</li>
+        <li class="cool"><em>fresh</em> figs<button class="delete"></button></li>
+        <li class="warm">pine nuts<button class="delete"></button></li>
+        <li class="hot">honey<button class="delete"></button></li>
+        <li class="complete">balsamic vinegar<button class="delete"></button></li>
       </ul>
       <div id="newItemButton"><button href="#" id="showForm">new item</button></div>
       <form id="newItemForm">
         <input type="text" id="itemDescription" placeholder="Add description" />
         <input type="submit" id="add" value="add" />
+        
       </form>
     </div>
+    <button class="deleteComplete"> </button>
+    <button class="clearAll"> </button>
     <script src="js/jquery-1.11.0.js"></script>
     <script src="js/example.js"></script>
   </body>
