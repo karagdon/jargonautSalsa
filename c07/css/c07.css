@@ -115,19 +115,28 @@ p {
   text-shadow: 2px 2px 1px #914141;
     border-top: 1px solid #e99295;
   border-bottom: 1px solid #914141;}
-.complete {
   
+.complete {
   background-color: #999;
   color: #fff;
-  
   background-position: center right;
   background-repeat: no-repeat;
   text-shadow: 2px 2px 1px #ccc;
   border-top: 1px solid #666;
   border-bottom: 1px solid #b0b0b0;
-  text-shadow: 2px 2px 1px #333;}
+  text-shadow: 2px 2px 1px #333;
+}
 
-
+.formControl{
+  position:fixed;
+  
+   align:left;
+   bottom:0px;
+   height:40px;
+   width:100%;
+   z-index:100;
+  
+}
 .delete:after {
   content: "X" !important;
   z-index:100000;
@@ -146,20 +155,24 @@ p {
   display:inline;
   font-weight:bold;
   right:-43px !important;
-  z-index:998;
+  
 }
+
 .deleteComplete, .clearAll {
   border-radius:0;
-  width:200px;
-  height:30px;
-  font-size:20px;
-  background-color: #000;
+  width:10%;
+  height:40px;
+  font-size:25px;
+  float:left !important;
+  left:50%;
+  vertical-align:middle !important;
+  background-color: rgba(0,0,0,.5) !important;
   color:#fff;
   margin-top: 0px;
   padding: 0 0;
   display:block;
   font-weight:bold;
-  z-index:998;
+  
   
 }
 .deleteComplete:after {

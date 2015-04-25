@@ -23,17 +23,24 @@
     e.preventDefault();
         $(this).parent('li').remove();
   });
+
   // TODO: click on TRASH to remove all 'complete' / marked for deletion
   $(document).on('click', 'button.deleteComplete',function(e){
     e.preventDefault();
         $('li.complete').remove();
+        updateCount();
+  });
+  
+    // TODO: click on TRASH to remove ALL Li
+  $(document).on('click', 'button.clearAll',function(e){
+    e.preventDefault();
+        $('li').remove();
+        updateCount();
   });
 
   // ALL CLICK ITEMS THAT HAPPEN ON OR PERTAIN TO A LIST ITEM
   $list.on('click', 'li' ,function () {
   
-    
-
     //Update the counter
     
   
