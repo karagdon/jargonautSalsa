@@ -21,20 +21,24 @@
  //DONE: click on X icon button to remove item
   $list.on('click', 'button.delete',function(e){
     e.preventDefault();
-        $(this).parent('li').remove();
+        // $(this).parent('li').remove();
+        $(this).parent('li').animate({opacity: 0.0, paddingLeft: '+=80'}, 500, function(){$(this).parent('li').remove()});
+        $(this).animate({opacity: 0.0}, 500, function(){$(this).parent('li').remove()});
   });
 
   // TODO: click on TRASH to remove all 'complete' / marked for deletion
   $(document).on('click', 'button.deleteComplete',function(e){
     e.preventDefault();
-        $('li.complete').remove();
+        $('li.complete').animate({opacity: 0.0}, 350, function(){$(this).remove()});
         updateCount();
   });
   
     // TODO: click on TRASH to remove ALL Li
   $(document).on('click', 'button.clearAll',function(e){
     e.preventDefault();
-        $('li').remove();
+         $('li').animate({opacity: 0.0}, 350, function(){$(this).remove()});
+        
+
         updateCount();
   });
 
