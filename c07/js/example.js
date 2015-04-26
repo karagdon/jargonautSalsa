@@ -22,7 +22,7 @@
   $list.on('click', 'button.delete',function(e){
     e.preventDefault();
         // $(this).parent('li').remove();
-        $(this).parent('li').animate({opacity: 0.0, paddingLeft: '+=80'}, 500, function(){$(this).parent('li').remove()});
+        $(this).parent('li').animate({opacity: 0.0}, 500, function(){$(this).parent('li').remove()});
         $(this).animate({opacity: 0.0}, 500, function(){$(this).parent('li').remove()});
   });
 
