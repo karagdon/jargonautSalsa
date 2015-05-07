@@ -1,27 +1,27 @@
 $('nav a').on('click', function(e) {
   e.preventDefault();
-  var url = this.href;                                      // URL to load
-  var $content = $('#content');                             // Cache selection
+  var url = this.href;
+  var $content = $('#content');
 
-  $('nav a.current').removeClass('current');                // Update links
+  $('nav a.current').removeClass('current');
   $(this).addClass('current');
-  $('#container').remove();                                 // Remove content
+  $('#container').remove();
 
   $.ajax({
-    type: "POST",                                           // GET or POST
-    url: url,                                               // Path to file
-    timeout: 2000,                                          // Waiting time
-    beforeSend: function() {                                // Before Ajax 
-      $content.append('<div id="load">Loading</div>');      // Load message
+    type: "POST",
+    url: url,
+    timeout: 2000,
+    beforeSend: function() {
+      $content.append('<div id="load">Loading</div>');
     },
-    complete: function() {                                  // Once finished
-      $('#loading').remove();                               // Clear message
+    complete: function() {
+      $('#loading').remove();
     },
-    success: function(data) {                               // Show content
+    success: function(data) {
       $content.html( $(data).find('#container') ).hide().fadeIn(400);
     },
-    fail: function() {                                      // Show error msg 
-      $('#panel').html('<div class="loading">Please try again soon.</div>');
+    fail: function() {
+      $('#panel').html('<div class="loading">EROROROROR!! Please try again soon.</div>');
     }
   });
 
