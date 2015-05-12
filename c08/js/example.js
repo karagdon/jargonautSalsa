@@ -14,3 +14,9 @@ $('#content').on('click', '#sessions il a', function(e){
 
 
 // Click on primary navigation
+
+
+$('#details').text('');
+});
+
+#page414
