@@ -15,14 +15,14 @@ $(function() {                                    // When the DOM is ready
     .done( function(data){                      // If successful
       times = data;                             // Store it in a variable
     }).fail( function() {                       // If a problem: show message
-      $('#event').html('Sorry! We could not load the timetable at the moment');
+      $('#event').html('The Timetable is out of commission at the moment!');
     });
   }
 
   loadTimetable();                              // Call the function
 
 
-  // CLICK ON THE EVENT TO LOAD A TIMETABLE 
+  // CLICK ON THE EVENT TO LOAD A TIMETABLE
   $('#content').on('click', '#event a', function(e) {  // User clicks on event
 
     e.preventDefault();                                // Prevent loading page
