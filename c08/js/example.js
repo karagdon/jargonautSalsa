@@ -1,3 +1,20 @@
+$(function() {
+  
+  var times;
+  $.ajax ({
+    beforeSend: function(xhr){
+      if (xhr.overrideMimeType){
+        xhr.overrideMimeType("application/json");
+      }
+    }
+  })
+}
+function loadTimeTable(){
+  $.getJSON('data/example.json').done(function(data){times = data;}).fail(function(){$('event').html("Sorry!");
+    
+  });
+}
+loadTimeTable();
 // Click on a session to load the description
 
 $('#content').on('click', '#sessions il a', function(e){
