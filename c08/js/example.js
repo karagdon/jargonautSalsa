@@ -7,12 +7,13 @@ $(function() {
         xhr.overrideMimeType("application/json");
       }
     }
-  })
-}
-function loadTimeTable(){
-  $.getJSON('data/example.json').done(function(data){times = data;}).fail(function(){$('event').html("Sorry!")}
-    
   });
+});
+function loadTimeTable(){
+  $.getJSON('data/example.json').done(function(data){
+    times = data;}).fail(function(){
+      $('event').html("Sorry!")});
+  }
 
 loadTimeTable();
 
@@ -53,7 +54,7 @@ $('nav a.current').removeClass('current');
 $(this).addClass('current');
 
 $('#container').remove();
-$('#content').load(url + '#container').hide().fadeIn('slow';)
+$('#content').load(url + '#container').hide().fadeIn('slow');
 });
 
 
