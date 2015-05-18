@@ -10,10 +10,10 @@ var msg = 'I don\'t know where you are\! :(';
 
 if (Modernizr.geolocation){
   navigator.geolocation.getCurrentPosition(success, fail);
-  elMap.textContent = "Where are you...?";
+  elMap.textContent = "Where am i...?";
 }
 else {
-  elMap.textContent = "Message";
+  elMap.textContent = msg;
 }
 
 
