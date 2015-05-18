@@ -16,7 +16,7 @@ else {
   elMap.textContent = msg;
 }
 
-$("#loc").on('click', function(){
+
 
   function success(position){
     msg =  '<h3>Longitude:</h3>' + position.coords.longitude + '<br/><h3>Latitude:</h3>' + position.coords.latitude + '';
@@ -30,4 +30,3 @@ $("#loc").on('click', function(){
   }
 
 
-});
