@@ -16,18 +16,18 @@ else {
   elMap.textContent = msg;
 }
 
-$("button#loc").on('click', function(){
+$("#loc").on('click', function(){
 
-function success(position){
-  msg =  '<h3>Longitude:</h3>' + position.coords.longitude + '<br/><h3>Latitude:</h3>' + position.coords.latitude + '';
-  elMap.innerHTML = msg;
+  function success(position){
+    msg =  '<h3>Longitude:</h3>' + position.coords.longitude + '<br/><h3>Latitude:</h3>' + position.coords.latitude + '';
+    elMap.innerHTML = msg;
+    
+  }
   
-}
-
-function fail(msg){
-  elMap.textContent = msg;
-  console.log(msg.code);
-}
+  function fail(msg){
+    elMap.textContent = msg;
+    console.log(msg.code);
+  }
 
 
 });
