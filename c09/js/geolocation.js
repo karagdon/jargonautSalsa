@@ -18,10 +18,7 @@ else {
 
 
 function success(position){
-  msg =  '<h3>Longitude:<br/>';
-  msg +=  position.coords.latitude + '</h3>';
-  msg +=  '<h3>Latitude:<br/>';
-  msg +=  position.coords.longitude + '</h3>';
+  msg =  '<h3>Longitude:</h3>' + position.coords.longitude + '<br/><h3>Latitude:</h3>' + position.coords.latitude + '';
   elMap.innerHTML = msg;
   
 }
