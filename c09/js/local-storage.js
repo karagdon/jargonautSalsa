@@ -12,6 +12,4 @@ localStorage.setItem('username', txtUserName.value)
 txtAnswer.addEventListener('input', function(){
 localStorage.setItem('answer',txtUserName.value)
  txtAnswer.value});
-
-
 }
